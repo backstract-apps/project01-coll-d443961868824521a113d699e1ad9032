@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project01-coll-d443961868824521a113d699e1ad9032-depl
+  labels:
+    app: project01-coll-d443961868824521a113d699e1ad9032
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: project01-coll-d443961868824521a113d699e1ad9032
+  template:
+    metadata:
+      labels:
+        app: project01-coll-d443961868824521a113d699e1ad9032
+    spec:
+      containers:
+        - name: project01-coll-d443961868824521a113d699e1ad9032
+          image: 216084506783.dkr.ecr.ap-south-1.amazonaws.com/backstract_apps:project01-coll-d443961868824521a113d699e1ad9032
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9051
